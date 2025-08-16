@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Blog — Regiones y Categorías</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .region { display: none; }
+    .region.active { display: block; }
+    .detalle-noticia img { max-width: 300px; margin-top: 10px; display: block; }
+    .detalle-noticia { margin-top: 10px; background: #f0f0f0; padding: 10px; border-radius: 5px; }
+    li { cursor: pointer; }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Blog Global — Regiones y Categorías</h1>
+    <nav>
+      <button onclick="mostrarRegion('europa')">🌍 Europa</button>
+      <button onclick="mostrarRegion('africa')">🌍 África</button>
+      <button onclick="mostrarRegion('asia')">🌏 Asia</button>
+      <button onclick="mostrarRegion('latinoamerica')">🌎 América Latina</button>
+      <button onclick="mostrarRegion('usa')">🗽 EE. UU.</button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Europa -->
+    <section id="europa" class="region">
+      <h2>Europa</h2>
+      <div class="categories">
+
+        <!-- Paz y Seguridad -->
+        <article>
+          <button class="btn-news" onclick="mostrarNoticias(this)">🕊️ Paz y Seguridad</button>
+          <div class="noticias" style="display: none;">
+            <ul>
+              <li onclick="mostrarDetalle(this)" data-text="La OTAN ha reforzado tropas y logística en Europa del Este para mejorar la seguridad regional." data-img="https://example.com/otan.jpg">La OTAN refuerza su presencia en Europa del Este.</li>
+              <li onclick="mostrarDetalle(this)" data-text="El diálogo entre Ucrania y Rusia continúa mediado por la ONU." data-img="https://example.com/ucrania-rusia.jpg">Diálogo de paz entre Ucrania y Rusia continúa.</li>
+            </ul>
+            <div class="detalle-noticia" style="display:none;">
+              <p id="detalle-text"></p>
+              <img id="detalle-img" src="" alt="">
+            </div>
+          </div>
+        </article>
+
+        <!-- Clima y Medio Ambiente -->
+        <article>
+          <button class="btn-news" onclick="mostrarNoticias(this)">🌱 Clima y Medio Ambiente</button>
+          <div class="noticias" style="display: none;">
+            <ul>
+              <li onclick="mostrarDetalle(this)" data-text="La UE impulsa políticas verdes para 2030, incluyendo energías renovables y reducción de emisiones." data-img="https://example.com/politicas-verdes.jpg">La UE impulsa políticas verdes para 2030.</li>
+              <li onclick="mostrarDetalle(this)" data-text="Protestas en Alemania buscan detener la explotación de minas de carbón contaminantes." data-img="https://example.com/protestas-alemania.jpg">Protestas ecologistas en Alemania por minas de carbón.</li>
+            </ul>
+            <div class="detalle-noticia" style="display:none;">
+              <p id="detalle-text"></p>
+              <img id="detalle-img" src="" alt="">
+            </div>
+          </div>
+        </article>
+
+        <!-- Comercio y Economía -->
+        <article>
+          <button class="btn-news" onclick="mostrarNoticias(this)">🛍️ Comercio y Economía</button>
+          <div class="noticias" style="display: none;">
+            <ul>
+              <li onclick="mostrarDetalle(this)" data-text="Francia y Alemania discuten sobre medidas económicas para combatir la inflación." data-img="https://example.com/francia-alemania.jpg">Francia y Alemania debaten sobre inflación.</li>
+              <li onclick="mostrarDetalle(this)" data-text="La economía italiana muestra signos de recuperación tras la pandemia." data-img="https://example.com/economia-italia.jpg">La economía italiana muestra señales de recuperación.</li>
+            </ul>
+            <div class="detalle-noticia" style="display:none;">
+              <p id="detalle-text"></p>
+              <img id="detalle-img" src="" alt="">
+            </div>
+          </div>
+        </article>
+
+        <!-- Democracia y Gobernanza -->
+        <article>
+          <button class="btn-news" onclick="mostrarNoticias(this)">🗳️ Democracia y Gobernanza</button>
+          <div class="noticias" style="display: none;">
+            <ul>
+              <li onclick="mostrarDetalle(this)" data-text="Elecciones regionales en España podrían significar cambio o continuidad política." data-img="https://example.com/elecciones-espana.jpg">Elecciones regionales en España: ¿cambio o continuidad?</li>
+              <li onclick="mostrarDetalle(this)" data-text="Bruselas revisa reformas judiciales en Hungría para garantizar democracia y derechos." data-img="https://example.com/hungria.jpg">Bruselas examina reformas judiciales en Hungría.</li>
+            </ul>
+            <div class="detalle-noticia" style="display:none;">
+              <p id="detalle-text"></p>
+              <img id="detalle-img" src="" alt="">
+            </div>
+          </div>
+        </article>
+
+        <!-- Derecho Internacional y Derechos Humanos -->
+        <article>
+          <button class="btn-news" onclick="mostrarNoticias(this)">📜 Derecho Internacional y Derechos Humanos</button>
+          <div class="noticias" style="display: none;">
+            <ul>
+              <li onclick="mostrarDetalle(this)" data-text="El Tribunal de Estrasburgo dicta fallo sobre libertad de prensa." data-img="https://example.com/estrasburgo.jpg">El Tribunal de Estrasburgo dicta fallo sobre libertad de prensa.</li>
+              <li onclick="mostrarDetalle(this)" data-text="ONG denuncian trato a migrantes en la frontera oriental de Europa." data-img="https://example.com/migrantes.jpg">ONG denuncian trato a migrantes en frontera oriental.</li>
+            </ul>
+            <div class="detalle-noticia" style="display:none;">
+              <p id="detalle-text"></p>
+              <img id="detalle-img" src="" alt="">
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- África -->
+    <section id="africa" class="region">
+      <h2>África</h2>
+      <div class="categories">
+
+        <!-- Paz y Seguridad -->
+        <article>
+          <button class="btn-news" onclick="mostrarNoticias(this)">🕊️ Paz y Seguridad</button>
+          <div class="noticias" style="display: none;">
+            <ul>
+              <li onclick="mostrarDetalle(this)" data-text="Misiones de paz se refuerzan para estabilizar la región del Sahel." data-img="https://example.com/sahel.jpg">Misiones de paz se refuerzan en el Sahel.</li>
+              <li onclick="mostrarDetalle(this)" data-text="Se firman acuerdos de paz entre facciones rivales en Sudán." data-img="https://example.com/sudan.jpg">Acuerdos de paz entre facciones en Sudán.</li>
+            </ul>
+            <div class="detalle-noticia" style="display:none;">
+              <p id="detalle-text"></p>
+              <img id="detalle-img" src="" alt="">
+            </div>
+          </div>
+        </article>
+
+        <!-- Clima y Medio Ambiente -->
+        <article>
+          <button class="btn-news" onclick="mostrarNoticias(this)">🌱 Clima y Medio Ambiente</button>
+          <div class="noticias" style="display: none;">
+            <ul>
+              <li onclick="mostrarDetalle(this)" data-text="Sequías extremas afectan el Cuerno de África, poniendo en riesgo la agricultura." data-img="https://example.com/sequia.jpg">Sequías extremas afectan el Cuerno de África.</li>
+              <li onclick="mostrarDetalle(this)" data-text="Proyectos de reforestación liderados por jóvenes buscan restaurar ecosistemas." data-img="https://example.com/reforestacion.jpg">Proyectos de reforestación liderados por jóvenes.</li>
+            </ul>
+            <div class="detalle-noticia" style="display:none;">
+              <p id="detalle-text"></p>
+              <img id="detalle-img" src="" alt="">
+            </div>
+          </div>
+        </article>
+
+        <!-- Comercio y Economía -->
+        <article>
+          <button class="btn-news" onclick="mostrarNoticias(this)">🛍️ Comercio y Economía</button>
+          <div class="noticias" style="display: none;">
+            <ul>
+              <li onclick="mostrarDetalle(this)" data-text="Acuerdo continental de libre comercio avanza para integrar economías africanas." data-img="https://example.com/africa-comercio.jpg">Acuerdo continental de libre comercio avanza.</li>
+              <li onclick="mostrarDetalle(this)" data-text="Ruanda muestra crecimiento económico sostenido y estabilidad." data-img="https://example.com/ruanda.jpg">Crecimiento económico sostenido en Ruanda.</li>
+            </ul>
+            <div class="detalle-noticia" style="display:none;">
+              <p id="detalle-text"></p>
+              <img id="detalle-img" src="" alt="">
+            </div>
+          </div>
+        </article>
+
+        <!-- Democracia y Gobernanza -->
+        <article>
+          <button class="btn-news" onclick="mostrarNoticias(this)">🗳️ Democracia y Gobernanza</button>
+          <div class="noticias" style="display: none;">
+            <ul>
+              <li onclick="mostrarDetalle(this)" data-text="Elecciones en Nigeria supervisadas internacionalmente para garantizar transparencia." data-img="https://example.com/nigeria.jpg">Elecciones en Nigeria bajo vigilancia internacional.</li>
+              <li onclick="mostrarDetalle(this)" data-text="Túnez implementa reformas constitucionales que fortalecen la democracia." data-img="https://example.com/tunez.jpg">Reformas constitucionales en Túnez.</li>
+            </ul>
+            <div class="detalle-noticia" style="display:none;">
+              <p id="detalle-text"></p>
+              <img id="detalle-img" src="" alt="">
+            </div>
+          </div>
+        </article>
+
+        <!-- Derecho Internacional y Derechos Humanos -->
+        <article>
+          <button class="btn-news" onclick="mostrarNoticias(this)">📜 Derecho Internacional y Derechos Humanos</button>
+          <div class="noticias" style="display: none;">
+            <ul>
+              <li onclick="mostrarDetalle(this)" data-text="Se denuncian casos de trabajo forzoso en Eritrea por organizaciones internacionales." data-img="https://example.com/eritrea.jpg">Denuncias sobre trabajo forzoso en Eritrea.</li>
+              <li onclick="mostrarDetalle(this)" data-text="Iniciativas buscan proteger los derechos de niñas en África Occidental." data-img="https://example.com/africa-derechos.jpg">Iniciativas para proteger los derechos de niñas en África Occidental.</li>
+            </ul>
+            <div class="detalle-noticia" style="display:none;">
+              <p id="detalle-text"></p>
+              <img id="detalle-img" src="" alt="">
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Asia -->
+    <section id="asia" class="region">
+      <h2>Asia</h2>
+      <div class="categories">
+
+        <!-- Paz y Seguridad -->
+        <article>
+          <button class="btn-news" onclick="mostrarNoticias(this)">🕊️ Paz y Seguridad</button>
+          <div class="noticias" style="display: none;">
+            <ul>
+              <li onclick="mostrarDetalle(this)" data-text="Las tensiones entre China y Taiwán aumentan debido a maniobras militares." data-img="https://example.com/china-taiwan.jpg">Tensiones entre China y Taiwán aumentan.</li>
+              <li onclick="mostrarDetalle(this)" data-text="Los países de Asia Central refuerzan la cooperación regional en seguridad." data-img="https://example.com/asia-central.jpg">Cooperación regional en seguridad en Asia Central.</li>
+            </ul>
+            <div class="detalle-noticia" style="display:none;">
+              <p id="detalle-text"></p>
+              <img id="detalle-img" src="" alt="">
+            </div>
+          </div>
+        </article>
+
+        <!-- Clima y Medio Ambiente -->
+        <article>
+          <button class="btn-news" onclick="mostrarNoticias(this)">🌱 Clima y Medio Ambiente</button>
+          <div class="noticias" style="display: none;">
+            <ul>
+              <li onclick="mostrarDetalle(this)" data-text="Inundaciones históricas afectan Pakistán y millones de personas." data-img="https://example.com/pakistan.jpg">Inundaciones históricas en Pakistán.</li>
+              <li onclick="mostrarDetalle(this)" data-text="Japón impulsa energías limpias tras accidente de Fukushima." data-img="https://example.com/japon.jpg">Japón impulsa energía limpia tras Fukushima.</li>
+            </ul>
+            <div class="detalle-noticia" style="display:none;">
+              <p id="detalle-text"></p>
+              <img id="detalle-img" src="" alt="">
+            </div>
+          </div>
+        </article>
+
+        <!-- Comercio y Economía -->
+        <article>
+          <button class="btn-news" onclick="mostrarNoticias(this)">🛍️ Comercio y Economía</button>
+          <div class="noticias" style="display: none;">
+            <ul>
+              <li onclick="mostrarDetalle(this)" data-text="India crece como potencia exportadora y centro de tecnología." data-img="https://example.com/india.jpg">India crece como potencia exportadora.</li>
+              <li onclick="mostrarDetalle(this)" data-text="El sudeste asiático se consolida como centro logístico y comercial." data-img="https://example.com/sudeste.jpg">El sudeste asiático se consolida como centro logístico.</li>
+            </ul>
+            <div class="detalle-noticia" style="display:none;">
+              <p id="detalle-text"></p>
+              <img id="detalle-img" src="" alt="">
+            </div>
+          </div>
+        </article>
+
+        <!-- Democracia y Gobernanza -->
+        <article>
+          <button class="btn-news" onclick="mostrarNoticias(this)">🗳️ Democracia y Gobernanza</button>
+          <div class="noticias" style="display: none;">
+            <ul>
+              <li onclick="mostrarDetalle(this)" data-text="Manifestaciones por reformas políticas en Tailandia." data-img="https://example.com/tailandia.jpg">Manifestaciones por reformas en Tailandia.</li>
+              <li onclick="mostrarDetalle(this)" data-text="Myanmar enfrenta presión internacional por la dictadura vigente." data-img="https://example.com/myanmar.jpg">Myanmar bajo presión internacional por dictadura.</li>
+            </ul>
+            <div class="detalle-noticia" style="display:none;">
+              <p id="detalle-text"></p>
+              <img id="detalle-img" src="" alt="">
+            </div>
+          </div>
+        </article>
+
+        <!-- Derecho Internacional y Derechos Humanos -->
+        <article>
+          <button class="btn-news" onclick="mostrarNoticias(this)">📜 Derecho Internacional y Derechos Humanos</button>
+          <div class="noticias" style="display: none;">
+            <ul>
+              <li onclick="mostrarDetalle(this)" data-text="ONU investiga abusos a minorías en Xinjiang." data-img="https://example.com/xinjiang.jpg">ONU investiga abusos en Xinjiang.</li>
+              <li onclick="mostrarDetalle(this)" data-text="Corea del Sur fortalece protección a minorías y derechos civiles." data-img="https://example.com/corea.jpg">Corea del Sur fortalece protección a minorías.</li>
+            </ul>
+            <div class="detalle-noticia" style="display:none;">
+              <p id="detalle-text"></p>
+              <img id="detalle-img" src="" alt="">
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Latinoamérica -->
+    <section id="latinoamerica" class="region">
+      <h2>América Latina</h2>
+      <div class="categories">
+
+        <!-- Paz y Seguridad -->
+        <article>
+          <button class="btn-news" onclick="mostrarNoticias(this)">🕊️ Paz y Seguridad</button>
+          <div class="noticias" style="display: none;">
+            <ul>
+              <li onclick="mostrarDetalle(this)" data-text="Los procesos de paz avanzan en Colombia con participación de múltiples actores." data-img="https://example.com/colombia.jpg">Procesos de paz avanzan en Colombia.</li>
+              <li onclick="mostrarDetalle(this)" data-text="Se coordinan acciones regionales contra el crimen organizado." data-img="https://example.com/crimen.jpg">Cooperación regional contra el crimen organizado.</li>
+            </ul>
+            <div class="detalle-noticia" style="display:none;">
+              <p id="detalle-text"></p>
+              <img id="detalle-img" src="" alt="">
+            </div>
+          </div>
+        </article>
+
+        <!-- Clima y Medio Ambiente -->
+        <article>
+          <button class="btn-news" onclick="mostrarNoticias(this)">🌱 Clima y Medio Ambiente</button>
+          <div class="noticias" style="display: none;">
+            <ul>
+              <li onclick="mostrarDetalle(this)" data-text="Brasil impulsa la protección de la Amazonía con nuevas leyes y proyectos ambientales." data-img="https://example.com/amazonia.jpg">Brasil impulsa la protección de la Amazonía.</li>
+              <li onclick="mostrarDetalle(this)" data-text="Chile aprueba una ley de cambio climático que busca reducir emisiones y proteger ecosistemas." data-img="https://example.com/chile.jpg">Chile aprueba ley de cambio climático.</li>
+            </ul>
+            <div class="detalle-noticia" style="display:none;">
+              <p id="detalle-text"></p>
+              <img id="detalle-img" src="" alt="">
+            </div>
+          </div>
+        </article>
+
+        <!-- Comercio y Economía -->
+        <article>
+          <button class="btn-news" onclick="mostrarNoticias(this)">🛍️ Comercio y Economía</button>
+          <div class="noticias" style="display: none;">
+            <ul>
+              <li onclick="mostrarDetalle(this)" data-text="México y Argentina fortalecen su alianza comercial para el crecimiento regional." data-img="https://example.com/mexico-argentina.jpg">México y Argentina fortalecen alianza comercial.</li>
+              <li onclick="mostrarDetalle(this)" data-text="Inversión extranjera crece en Perú, generando empleo y desarrollo." data-img="https://example.com/peru.jpg">Inversión extranjera crece en Perú.</li>
+            </ul>
+            <div class="detalle-noticia" style="display:none;">
+              <p id="detalle-text"></p>
+              <img id="detalle-img" src="" alt="">
+            </div>
+          </div>
+        </article>
+
+        <!-- Democracia y Gobernanza -->
+        <article>
+          <button class="btn-news" onclick="mostrarNoticias(this)">🗳️ Democracia y Gobernanza</button>
+          <div class="noticias" style="display: none;">
+            <ul>
+              <li onclick="mostrarDetalle(this)" data-text="Reformas políticas en Ecuador buscan fortalecer instituciones democráticas." data-img="https://example.com/ecuador.jpg">Reformas políticas en Ecuador.</li>
+              <li onclick="mostrarDetalle(this)" data-text="Elecciones libres fortalecen la democracia en Uruguay." data-img="https://example.com/uruguay.jpg">Elecciones libres fortalecen la democracia en Uruguay.</li>
+            </ul>
+            <div class="detalle-noticia" style="display:none;">
+              <p id="detalle-text"></p>
+              <img id="detalle-img" src="" alt="">
+            </div>
+          </div>
+        </article>
+
+        <!-- Derecho Internacional y Derechos Humanos -->
+        <article>
+          <button class="btn-news" onclick="mostrarNoticias(this)">📜 Derecho Internacional y Derechos Humanos</button>
+          <div class="noticias" style="display: none;">
+            <ul>
+              <li onclick="mostrarDetalle(this)" data-text="OEA alerta sobre represión en Nicaragua." data-img="https://example.com/nicaragua.jpg">OEA alerta sobre represión en Nicaragua.</li>
+              <li onclick="mostrarDetalle(this)" data-text="Argentina promueve derechos LGTBIQ+ en la región." data-img="https://example.com/argentina.jpg">Argentina promueve derechos LGTBIQ+ en la región.</li>
+            </ul>
+            <div class="detalle-noticia" style="display:none;">
+              <p id="detalle-text"></p>
+              <img id="detalle-img" src="" alt="">
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- EE. UU. -->
+    <section id="usa" class="region">
+      <h2>EE. UU. — Política y Política Exterior</h2>
+      <div class="categories">
+
+        <!-- Paz y Seguridad -->
+        <article>
+          <button class="btn-news" onclick="mostrarNoticias(this)">🕊️ Paz y Seguridad</button>
+          <div class="noticias" style="display: none;">
+            <ul>
+              <li onclick="mostrarDetalle(this)" data-text="EE. UU. refuerza alianzas estratégicas en el Pacífico." data-img="https://example.com/pacifico.jpg">EE. UU. refuerza alianzas en el Pacífico.</li>
+              <li onclick="mostrarDetalle(this)" data-text="Debate sobre control de armas en el Congreso estadounidense." data-img="https://example.com/armas.jpg">Debate sobre control de armas en el Congreso.</li>
+            </ul>
+            <div class="detalle-noticia" style="display:none;">
+              <p id="detalle-text"></p>
+              <img id="detalle-img" src="" alt="">
+            </div>
+          </div>
+        </article>
+
+        <!-- Clima y Medio Ambiente -->
+        <article>
+          <button class="btn-news" onclick="mostrarNoticias(this)">🌱 Clima y Medio Ambiente</button>
+          <div class="noticias" style="display: none;">
+            <ul>
+              <li onclick="mostrarDetalle(this)" data-text="EE. UU. invierte millonariamente en energía limpia." data-img="https://example.com/energia-limpia.jpg">Inversiones millonarias en energía limpia.</li>
+              <li onclick="mostrarDetalle(this)" data-text="California lidera la reducción de emisiones contaminantes." data-img="https://example.com/california.jpg">California lidera en reducción de emisiones.</li>
+            </ul>
+            <div class="detalle-noticia" style="display:none;">
+              <p id="detalle-text"></p>
+              <img id="detalle-img" src="" alt="">
+            </div>
+          </div>
+        </article>
+
+        <!-- Comercio y Economía -->
+        <article>
+          <button class="btn-news" onclick="mostrarNoticias(this)">🛍️ Comercio y Economía</button>
+          <div class="noticias" style="display: none;">
+            <ul>
+              <li onclick="mostrarDetalle(this)" data-text="La inflación disminuye tras medidas de la FED." data-img="https://example.com/fed.jpg">Inflación disminuye tras medidas de la FED.</li>
+              <li onclick="mostrarDetalle(this)" data-text="Nuevos tratados comerciales con Asia y Europa." data-img="https://example.com/tratados.jpg">Nuevos tratados con Asia y Europa.</li>
+            </ul>
+            <div class="detalle-noticia" style="display:none;">
+              <p id="detalle-text"></p>
+              <img id="detalle-img" src="" alt="">
+            </div>
+          </div>
+        </article>
+
+        <!-- Democracia y Gobernanza -->
+        <article>
+          <button class="btn-news" onclick="mostrarNoticias(this)">🗳️ Democracia y Gobernanza</button>
+          <div class="noticias" style="display: none;">
+            <ul>
+              <li onclick="mostrarDetalle(this)" data-text="Elecciones legislativas con participación récord." data-img="https://example.com/elecciones.jpg">Elecciones legislativas con participación récord.</li>
+              <li onclick="mostrarDetalle(this)" data-text="Debates sobre el sistema electoral federal." data-img="https://example.com/sistema-electoral.jpg">Debates sobre el sistema electoral federal.</li>
+            </ul>
+            <div class="detalle-noticia" style="display:none;">
+              <p id="detalle-text"></p>
+              <img id="detalle-img" src="" alt="">
+            </div>
+          </div>
+        </article>
+
+        <!-- Derecho Internacional y Derechos Humanos -->
+        <article>
+          <button class="btn-news" onclick="mostrarNoticias(this)">📜 Derecho Internacional y Derechos Humanos</button>
+          <div class="noticias" style="display: none;">
+            <ul>
+              <li onclick="mostrarDetalle(this)" data-text="EE. UU. denuncia violaciones en países aliados." data-img="https://example.com/violaciones.jpg">EE. UU. denuncia violaciones en países aliados.</li>
+              <li onclick="mostrarDetalle(this)" data-text="Apoyo internacional a defensores de derechos humanos." data-img="https://example.com/defensores.jpg">Apoyo internacional a defensores de derechos humanos.</li>
+            </ul>
+            <div class="detalle-noticia" style="display:none;">
+              <p id="detalle-text"></p>
+              <img id="detalle-img" src="" alt="">
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    function mostrarRegion(regionId) {
+      const secciones = document.querySelectorAll('main section');
+      const actual = document.getElementById(regionId);
+      if (!actual) return;
+
+      const yaVisible = actual.classList.contains('active');
+      secciones.forEach(sec => sec.classList.remove('active'));
+
+      if (!yaVisible) actual.classList.add('active');
+    }
+
+    function mostrarNoticias(boton) {
+      const article = boton.closest('article');
+      const noticias = article.querySelector('.noticias');
+      if (!noticias) return;
+      noticias.style.display = (noticias.style.display === 'block') ? 'none' : 'block';
+    }
+
+    function mostrarDetalle(li) {
+      const detalle = li.closest('.noticias').querySelector('.detalle-noticia');
+      const p = detalle.querySelector('#detalle-text');
+      const img = detalle.querySelector('#detalle-img');
+
+      p.textContent = li.getAttribute('data-text');
+      img.src = li.getAttribute('data-img');
+      img.alt = li.textContent;
+
+      detalle.style.display = 'block';
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('main section').forEach(sec => sec.classList.remove('active'));
+    });
+  </script>
+
+</body>
+</html>
